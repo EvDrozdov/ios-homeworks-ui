@@ -19,7 +19,7 @@ class PostViewController: UIViewController {
     
         override func viewDidLoad() {
               super.viewDidLoad()
-            view.backgroundColor = .systemGray
+            view.backgroundColor = .systemIndigo
               self.title = feedViewController.post1.title
               navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Файлы", style: .done, target: self, action: #selector(sendToInfoViewController(sender:)))
         }

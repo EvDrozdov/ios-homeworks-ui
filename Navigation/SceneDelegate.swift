@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         tabBarController.viewControllers = [userFeedController, userProfileController]
         tabBarController.viewControllers?.enumerated().forEach {
-            $1.tabBarItem.title = $0 == 0 ? "Лента" : "Профиль"
+            $1.tabBarItem.title = $0 == 0 ? "Feed" : "Profile"
             $1.tabBarItem.image = $0 == 0
                     ? UIImage(systemName: "list.bullet.rectangle.portrait.fill")
                     : UIImage(systemName: "brain.head.profile")
