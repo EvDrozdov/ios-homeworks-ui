@@ -10,9 +10,22 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     private lazy var profileHeaderView : ProfileHeaderView = {
-        let view = ProfileHeaderView(frame: .zero)
-        return view
+        let profileHeaderView = ProfileHeaderView()
+        self.view.backgroundColor = .lightGray
+        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        return profileHeaderView
 
+    }()
+    
+    private lazy var newButton: UIButton = {
+        
+        let button = UIButton()
+        button.setTitle("New Title", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .green
+        button.layer.cornerRadius = 3
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
 
     
@@ -21,17 +34,26 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         self.navigationItem.title = "Profile"
         self.view.addSubview(self.profileHeaderView)
+        self.view.addSubview(self.newButton)
+        
+        
+        NSLayoutConstraint.activate([
+            profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileHeaderView.heightAnchor.constraint(equalToConstant: 220),
+            
+            newButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            newButton.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            newButton.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            newButton.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
         
 
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.profileHeaderView.frame = CGRect(x: 0, y: 50, width: self.view.bounds.width, height: self.view.bounds.height)
-    }
-
-    
 }
