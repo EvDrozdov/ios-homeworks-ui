@@ -13,6 +13,7 @@
 		F75F767A2876238D007A8D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75F76792876238D007A8D76 /* Assets.xcassets */; };
 		F75F767D2876238D007A8D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75F767B2876238D007A8D76 /* LaunchScreen.storyboard */; };
 		F773CB4128CE1212008647CA /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F773CB3F28CE1212008647CA /* ProfileHeaderView.swift */; };
+		F7A3D86728EC2790005B602F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3D86628EC2790005B602F /* LogInViewController.swift */; };
 		F7D9980428BE37D000E0A0A7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9980328BE37D000E0A0A7 /* FeedViewController.swift */; };
 		F7D9980628BE37EE00E0A0A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9980528BE37EE00E0A0A7 /* ProfileViewController.swift */; };
 		F7D9980828BE399700E0A0A7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9980728BE399700E0A0A7 /* InfoViewController.swift */; };
@@ -29,6 +30,7 @@
 		F75F767C2876238D007A8D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F75F767E2876238D007A8D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F773CB3F28CE1212008647CA /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		F7A3D86628EC2790005B602F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F7D9980328BE37D000E0A0A7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F7D9980528BE37EE00E0A0A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7D9980728BE399700E0A0A7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				F773CB3F28CE1212008647CA /* ProfileHeaderView.swift */,
 				F7D9980528BE37EE00E0A0A7 /* ProfileViewController.swift */,
+				F7A3D86628EC2790005B602F /* LogInViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				F7D9980A28BE39AA00E0A0A7 /* PostViewController.swift in Sources */,
 				F75F76712876238C007A8D76 /* AppDelegate.swift in Sources */,
+				F7A3D86728EC2790005B602F /* LogInViewController.swift in Sources */,
 				F7D9980428BE37D000E0A0A7 /* FeedViewController.swift in Sources */,
 				F7D9980628BE37EE00E0A0A7 /* ProfileViewController.swift in Sources */,
 				F75F76732876238C007A8D76 /* SceneDelegate.swift in Sources */,
