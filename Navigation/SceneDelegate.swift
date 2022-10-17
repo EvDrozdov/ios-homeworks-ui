@@ -13,6 +13,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        if #available(iOS 15, *) {
+            let appearence = UINavigationBarAppearance()
+            appearence.configureWithOpaqueBackground()
+            UINavigationBar.appearance().standardAppearance = appearence
+            UINavigationBar.appearance().scrollEdgeAppearance = appearence
+            }
+        
         guard let windowScene  = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: windowScene)

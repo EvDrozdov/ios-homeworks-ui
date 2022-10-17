@@ -11,38 +11,41 @@ class ProfileHeaderView: UIView {
     
     private lazy var catTextLabel: UILabel = {
         
-        let label = UILabel(frame: CGRect(x: 165, y: 10, width: 200, height: 100))
+        let label = UILabel()
         label.textColor = .black
         label.text = "Hipster Cat"
         label.backgroundColor = .clear
         label.font = .boldSystemFont(ofSize: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
         
     }()
     
     private lazy var catAvatarImage: UIImageView = {
-        var imageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 135, height: 135))
+        var imageView = UIImageView()
         imageView.image = UIImage(named: "cat")
-        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.layer.cornerRadius = 50
         imageView.layer.borderColor = UIColor(ciColor: .white).cgColor
         imageView.layer.borderWidth = 3
         imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
     }()
     
     private lazy var statusLabel: UILabel = {
         
-        let statusLabel = UILabel(frame: CGRect(x: 165, y: 100, width: 137, height: 60))
+        let statusLabel = UILabel()
         statusLabel.text = "Waiting for something"
         statusLabel.textColor = .gray
         statusLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
         return statusLabel
     }()
     
     private lazy var textFild:UITextField = {
         
-        let textFild = UITextField(frame: CGRect(x: 165, y: 150, width: 230, height: 40))
+        let textFild = UITextField()
         textFild.textColor = .black
         textFild.font = .systemFont(ofSize: 15, weight: .regular)
         textFild.backgroundColor = .white
@@ -50,6 +53,7 @@ class ProfileHeaderView: UIView {
         textFild.layer.borderWidth = 1
         textFild.layer.borderColor = UIColor(ciColor: .black).cgColor
         textFild.addTarget(self, action: #selector(statusTextChanged), for: .editingChanged)
+        textFild.translatesAutoresizingMaskIntoConstraints = false
         return textFild
     }()
     
@@ -66,6 +70,7 @@ class ProfileHeaderView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
         
@@ -88,6 +93,32 @@ class ProfileHeaderView: UIView {
         self.addSubview(self.catAvatarImage)
         self.addSubview(self.button)
         self.addSubview(self.catTextLabel)
+        
+        NSLayoutConstraint.activate([
+        
+            catAvatarImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            catAvatarImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            catAvatarImage.heightAnchor.constraint(equalToConstant: 100),
+            catAvatarImage.widthAnchor.constraint(equalToConstant: 100),
+            
+            catTextLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 27),
+            catTextLabel.leadingAnchor.constraint(equalTo: self.catAvatarImage.trailingAnchor, constant: 16),
+            
+            button.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            button.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            button.topAnchor.constraint(equalTo: self.catAvatarImage.bottomAnchor, constant: 32),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            
+            textFild.bottomAnchor.constraint(equalTo: self.button.topAnchor, constant: -20),
+            textFild.heightAnchor.constraint(equalToConstant: 40),
+            textFild.leadingAnchor.constraint(equalTo: self.catAvatarImage.trailingAnchor, constant: 16),
+            textFild.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            
+            statusLabel.bottomAnchor.constraint(equalTo: self.textFild.topAnchor, constant: 16),
+            statusLabel.heightAnchor.constraint(equalToConstant: 50),
+            statusLabel.leadingAnchor.constraint(equalTo: self.catAvatarImage.trailingAnchor, constant: 16)
+            
+            ])
     }
     
     private var statusText: String = ""
