@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileHeaderView: UIView {
+class ProfileHeaderView: UITableViewHeaderFooterView{
     
     private lazy var catTextLabel: UILabel = {
         
@@ -76,8 +76,8 @@ class ProfileHeaderView: UIView {
         
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(reuseIdentifier identifier: String?) {
+        super.init(reuseIdentifier: identifier)
         self.setupView()
     }
     
