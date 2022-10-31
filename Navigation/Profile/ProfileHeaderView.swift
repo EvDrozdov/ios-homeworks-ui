@@ -9,6 +9,13 @@ import UIKit
 
 class ProfileHeaderView: UITableViewHeaderFooterView{
     
+    private lazy var profileHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var catTextLabel: UILabel = {
         
         let label = UILabel()
@@ -88,14 +95,23 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
     
     private func setupView() {
         
+        self.addSubview(self.profileHeaderView)
+        
         self.addSubview(self.textFild)
         self.addSubview(self.statusLabel)
         self.addSubview(self.catAvatarImage)
         self.addSubview(self.button)
         self.addSubview(self.catTextLabel)
         
-        NSLayoutConstraint.activate([
         
+        
+        NSLayoutConstraint.activate([
+            
+            profileHeaderView.topAnchor.constraint(equalTo: topAnchor),
+            profileHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            profileHeaderView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
             catAvatarImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             catAvatarImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             catAvatarImage.heightAnchor.constraint(equalToConstant: 100),
@@ -106,6 +122,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
             
             button.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             button.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             button.topAnchor.constraint(equalTo: self.catAvatarImage.bottomAnchor, constant: 32),
             button.heightAnchor.constraint(equalToConstant: 50),
             
@@ -118,7 +135,8 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
             statusLabel.heightAnchor.constraint(equalToConstant: 50),
             statusLabel.leadingAnchor.constraint(equalTo: self.catAvatarImage.trailingAnchor, constant: 16)
             
-            ])
+            
+        ])
     }
     
     private var statusText: String = ""
