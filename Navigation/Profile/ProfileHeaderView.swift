@@ -28,7 +28,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         
     }()
     
-    private lazy var catAvatarImage: UIImageView = {
+     lazy var catAvatarImage: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "cat")
         imageView.layer.cornerRadius = 50
@@ -125,7 +125,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
             button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             button.topAnchor.constraint(equalTo: self.catAvatarImage.bottomAnchor, constant: 32),
             button.heightAnchor.constraint(equalToConstant: 50),
-            
+           
             textFild.bottomAnchor.constraint(equalTo: self.button.topAnchor, constant: -20),
             textFild.heightAnchor.constraint(equalToConstant: 40),
             textFild.leadingAnchor.constraint(equalTo: self.catAvatarImage.trailingAnchor, constant: 16),
